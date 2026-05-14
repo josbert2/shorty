@@ -27,8 +27,8 @@ export function ScreenshotPlaceholder() {
     <div
       aria-hidden
       style={{
-        width: 156,
-        height: 117,
+        width: 108,
+        height: 81,
         background: "rgb(13,13,13)",
         borderRadius: 5.46,
         boxShadow:
@@ -41,7 +41,11 @@ export function ScreenshotPlaceholder() {
         justifyContent: "center",
       }}
     >
-      <ScreenshotEmptyState />
+      {/* Browser impone min-font-size (~12px). Wrapper con scale(0.5) bypassa
+          el clamp y rinde el 9.1px / 4.55px del original sin distorsión. */}
+      <div style={{ transform: "scale(0.5)", transformOrigin: "center center" }}>
+        <ScreenshotEmptyState />
+      </div>
     </div>
   );
 }

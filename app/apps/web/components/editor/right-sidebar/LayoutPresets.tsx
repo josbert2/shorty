@@ -35,14 +35,20 @@ export type LayoutPresetId =
     perspective(30em) rotateX(~22°) rotateY(~-20°) rotateZ(~-8°)
   → matriz 4×4 con foreshortening (m14, m24, m34 negativos pequeños).
 */
+/*
+  Scales reducidos vs. el canvas real (1.8 / 2.5 originales) — en la miniatura
+  el zoom agresivo deja el screenshot tocando los bordes y se ve "muy cerca".
+  Acá usamos 1.3 / 1.6 que conservan el INTENT (top vs. bottom, leve vs. fuerte)
+  pero mantienen el device contenido dentro del frame 208×156.
+*/
 export const PRESET_TRANSFORMS: Record<LayoutPresetId, string> = {
   center: "translate(0%, 0%) scale(1) rotateZ(0deg)",
   tilted:
     "matrix3d(0.907061, 0.134673, 0.398878, -0.00109582, -0.26181, 0.922409, 0.283931, -0.00078003, -0.329691, -0.361973, 0.87194, -0.00239544, 0, 0, 0, 1)",
-  "zoom-top-1": "translate(0%, -40%) scale(1.8) rotateZ(0deg)",
-  "zoom-top-2": "translate(0%, -66%) scale(2.5) rotateZ(0deg)",
-  "zoom-bot-1": "translate(0%, 40%) scale(1.8) rotateZ(0deg)",
-  "zoom-bot-2": "translate(0%, 66%) scale(2.5) rotateZ(0deg)",
+  "zoom-top-1": "translate(0%, -22%) scale(1.3) rotateZ(0deg)",
+  "zoom-top-2": "translate(0%, -36%) scale(1.6) rotateZ(0deg)",
+  "zoom-bot-1": "translate(0%, 22%) scale(1.3) rotateZ(0deg)",
+  "zoom-bot-2": "translate(0%, 36%) scale(1.6) rotateZ(0deg)",
 };
 
 const PRESETS: { id: LayoutPresetId; transform: string }[] = (
@@ -125,6 +131,9 @@ function LayoutItem({
         className="absolute inset-0"
         style={{ background: GRADIENT }}
       />
+      {/* .component (outer) aplica el preset transform al device.
+          El rotateZ-8 + perspective sólo aplica al iPhone (.devices) en shots.so;
+          para screenshot el "tilt" ya viene baked en el matrix3d del preset. */}
       <div
         className="absolute inset-0 flex items-center justify-center"
         style={{
