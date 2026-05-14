@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: shotso-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: shotso
+      POSTGRES_USER: shotso
+      POSTGRES_PASSWORD: shotso_dev
+    volumes:
+      - shotso_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shotso -d shotso"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  shotso_pg_data:

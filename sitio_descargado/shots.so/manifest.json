@@ -1,0 +1,22 @@
+{
+  "name": "Shots",
+  "short_name": "Shots",
+  "description": "Create Amazing Mockups",
+  "start_url": "/",
+  "display": "fullscreen",
+  "scope": "/",
+  "background_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/apple-touch-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/apple-touch-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Secrets — NUNCA commitear
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python venv (script de scraping)
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js / Turbo
+.next/
+.turbo/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+.cache/
+tmp/
+.tmp/
+
+# Drizzle local migrations cache
+drizzle/.snapshot
