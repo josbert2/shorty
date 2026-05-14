@@ -2,6 +2,7 @@
  * ╔══════════════════════════════════════════════════════════════╗
  * ║   WEB ASSET EXTRACTOR — Pégalo en la consola del navegador   ║
  * ║   Tabs: HTML · CSS · JS · Imágenes + ZIP descargable         ║
+ * ║   v2 — incluye pseudo-elementos ::before y ::after           ║
  * ╚══════════════════════════════════════════════════════════════╝
  */
 
@@ -380,17 +381,52 @@ Pulsa <b style="color:#00e5ff">Escanear</b> para generar árbol…</pre>
       'text-decoration','text-transform','white-space','word-break',
       'object-fit','object-position','aspect-ratio','clip-path','filter','visibility'
     ];
+
     scope.root.querySelectorAll('*').forEach(el => {
       const cs = window.getComputedStyle(el);
       const s  = getSelector(el);
-      if (seen.has(s)) return; seen.add(s);
+      if (seen.has(s)) return;
+      seen.add(s);
       const decls = PROPS
         .map(p=>[p, cs.getPropertyValue(p)])
         .filter(([,v])=>v&&v!=='none'&&v!=='normal'&&v!=='auto'&&v!=='0px'&&v!=='rgba(0, 0, 0, 0)')
         .map(([p,v]) => `  ${p}: ${v};`);
       if (decls.length) lines.push(`${s} {\n${decls.join('\n')}\n}\n`);
     });
+
     return lines.join('\n');
+  }
+
+  // ── Extrae ::before / ::after DIRECTO desde las hojas de estilo (100% fiable) ──
+  function extractPseudoRulesFromSheets() {
+    const lines = ['\n/* === Pseudo-elementos ::before / ::after (desde stylesheets) === */\n'];
+    let found = 0;
+
+    const walkRules = (rules) => {
+      for (const rule of rules) {
+        try {
+          if (rule.selectorText) {
+            if (/:{1,2}(before|after)/i.test(rule.selectorText)) {
+              lines.push(`${rule.selectorText} {\n  ${rule.style.cssText.replace(/;\s*/g, ';\n  ').trim()}\n}\n`);
+              found++;
+            }
+          }
+          // Entrar recursivo en @media, @supports, @layer, etc.
+          if (rule.cssRules) walkRules(rule.cssRules);
+        } catch(e) { /* ignorar */ }
+      }
+    };
+
+    for (const sheet of document.styleSheets) {
+      try {
+        walkRules(sheet.cssRules);
+      } catch(e) {
+        // Hoja externa con CORS bloqueado — se salta silenciosamente
+      }
+    }
+
+    uiLog(`Pseudo-elementos en hojas de estilo: ${found}`, found > 0 ? '#69ff47' : '#ff9900');
+    return found > 0 ? lines.join('\n') : '';
   }
 
   function buildHTML(scope, computedCSS) {
@@ -425,7 +461,7 @@ Pulsa <b style="color:#00e5ff">Escanear</b> para generar árbol…</pre>
         uiLog('CSS CORS: '+href.slice(-40),'#ff6b6b');
       }
     }
-    // computed
+    // computed (incluye pseudo-elementos)
     files['_computed_styles.css'] = scope.computedCSS;
     return files;
   }
@@ -512,8 +548,10 @@ Pulsa <b style="color:#00e5ff">Escanear</b> para generar árbol…</pre>
     uiLog(`Scope: ${scope.isElement ? scope.selector : 'página completa'}`, '#00e5ff');
 
     try {
-      // CSS computado
+      // CSS computado de elementos normales
       scope.computedCSS = extractComputedStyles(scope);
+      // Pseudo-elementos leídos directo desde las hojas de estilo (método fiable)
+      scope.computedCSS += extractPseudoRulesFromSheets();
       uiLog('Estilos computados ✓','#69ff47');
       uiProgress(1,6);
 
@@ -676,7 +714,7 @@ Pulsa <b style="color:#00e5ff">Escanear</b> para generar árbol…</pre>
         `Fecha: ${new Date().toLocaleString()}`,
         '',
         '  index.html       → HTML completo + computed styles',
-        '  css/             → CSS (inline, externos, computed)',
+        '  css/             → CSS (inline, externos, computed con ::before/::after)',
         '  js/              → Scripts (inline, externos)',
         '  images/          → Imágenes y SVGs',
         '  _class_tree.txt  → Árbol de clases',

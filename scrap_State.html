@@ -41,7 +41,7 @@ div.transform-controls-wrapper {
   visibility: visible;
 }
 
-div.position-controls {
+div.position-controls.minimized-controls {
   display: flex;
   position: static;
   width: 208px;
@@ -56,6 +56,7 @@ div.position-controls {
   border: 0px none rgb(240, 240, 240);
   border-color: rgb(240, 240, 240);
   opacity: 1;
+  transform: matrix(0.4, 0, 0, 0.4, 0, -82.4);
   transition: all;
   flex: 0 1 auto;
   flex-direction: column;
@@ -68,6 +69,7 @@ div.position-controls {
   pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
+  filter: drop-shadow(rgba(0, 0, 0, 0.6) 0px 10px 10px);
   visibility: visible;
 }
 
@@ -95,7 +97,6 @@ div.layout-filters {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -132,7 +133,6 @@ div.switch {
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -172,7 +172,6 @@ button.switch-button.icon-only.is-active {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -207,7 +206,6 @@ div.visual {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -239,7 +237,6 @@ div.icon-wrapper {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -270,7 +267,6 @@ svg {
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -299,7 +295,6 @@ path {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -333,7 +328,6 @@ div.switch-button-active-indicator {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -374,7 +368,6 @@ button.switch-button.icon-only {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -403,7 +396,6 @@ g {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -434,7 +426,6 @@ div.zoom-tilt-controls {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -466,7 +457,6 @@ div.zoom-tilt-header {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -503,7 +493,6 @@ div.switch.zoom-tilt-tabs {
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -544,7 +533,6 @@ button.switch-button.label-only.is-active {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -576,7 +564,6 @@ p.text-capitalize {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   text-transform: capitalize;
   object-fit: fill;
@@ -619,7 +606,6 @@ button.switch-button.label-only {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -741,7 +727,6 @@ div:nth-of-type(2) {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -762,6 +747,7 @@ div.panel-control.zoom-panel-control {
   border: 0px none rgb(240, 240, 240);
   border-color: rgb(240, 240, 240);
   opacity: 1;
+  transform: matrix(1, 0, 0, 1, 0, -30);
   transition: 0.3s;
   flex: 0 1 auto;
   flex-direction: column;
@@ -769,7 +755,6 @@ div.panel-control.zoom-panel-control {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -796,11 +781,10 @@ span.label.gray-text {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   text-transform: uppercase;
   object-fit: fill;
   object-position: 50% 50%;
-  visibility: visible;
+  visibility: hidden;
 }
 
 div.controls {
@@ -827,7 +811,6 @@ div.controls {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -847,7 +830,7 @@ div.position-pad-safearea {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(240, 240, 240);
-  border-radius: 14px;
+  border-radius: 28px;
   border-color: rgb(240, 240, 240);
   opacity: 1;
   transition: all;
@@ -858,7 +841,6 @@ div.position-pad-safearea {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -885,7 +867,7 @@ div.drag-pad-wrapper.zoom-pad {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(240, 240, 240);
-  border-radius: 14px;
+  border-radius: 28px;
   border-color: rgb(240, 240, 240);
   opacity: 1;
   transition: all;
@@ -895,7 +877,6 @@ div.drag-pad-wrapper.zoom-pad {
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -1752,6 +1733,7 @@ div.drag-pad {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(240, 240, 240);
+  border-radius: 24px;
   border-color: rgb(240, 240, 240);
   opacity: 1;
   transition: all;
@@ -1761,7 +1743,6 @@ div.drag-pad {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -1794,7 +1775,6 @@ div.drag-handle {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: grab;
   object-fit: fill;
   object-position: 50% 50%;
@@ -1863,7 +1843,6 @@ div.axis-lock {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -1891,7 +1870,6 @@ form {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -1910,7 +1888,7 @@ span.slider-component.undefined-disabled.hide-rail {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(240, 240, 240);
-  border-radius: 8px;
+  border-radius: 12px;
   border-color: rgb(240, 240, 240);
   opacity: 1;
   transition: all;
@@ -1920,7 +1898,6 @@ span.slider-component.undefined-disabled.hide-rail {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -1940,7 +1917,7 @@ span.SliderTrack.track {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(85, 85, 85);
-  border-radius: 8px;
+  border-radius: 12px;
   border-color: rgb(85, 85, 85);
   opacity: 1;
   transition: all;
@@ -1950,7 +1927,6 @@ span.SliderTrack.track {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -1971,7 +1947,7 @@ span.SliderRange.rail {
   font-weight: 400;
   text-align: start;
   border: 0px none rgb(85, 85, 85);
-  border-radius: 8px;
+  border-radius: 12px;
   border-color: rgb(85, 85, 85);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1.5px 6px -3px;
   opacity: 1;
@@ -1982,7 +1958,6 @@ span.SliderRange.rail {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -2014,7 +1989,6 @@ span:nth-of-type(2) {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   object-fit: fill;
   object-position: 50% 50%;
   visibility: visible;
@@ -2048,7 +2022,6 @@ span.SliderThumb.thumb {
   overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
-  pointer-events: all;
   cursor: pointer;
   object-fit: fill;
   object-position: 50% 50%;
@@ -2077,7 +2050,6 @@ input {
   overflow: clip;
   overflow-x: clip;
   overflow-y: clip;
-  pointer-events: all;
   cursor: text;
   object-fit: fill;
   object-position: 50% 50%;
@@ -2102,7 +2074,7 @@ div.labels {
   text-align: start;
   border: 0px none rgb(240, 240, 240);
   border-color: rgb(240, 240, 240);
-  opacity: 1;
+  opacity: 0;
   transition: all;
   flex: 0 1 auto;
   flex-direction: row;
@@ -3328,6 +3300,6 @@ html *, html ::after, html ::before {
 </style>
 </head>
 <body>
-<div class="layouts-panel-controls-top" style="top: 0px; height: max-content;"><div class="transform-controls-wrapper"><div class="position-controls " style="transform: none;"><div class="layout-filters"><div class="switch" style="flex:1"><button class="switch-button  icon-only is-active"><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M13.997 2A3.004 3.004 0 0 1 17 5.012v13.976A3 3 0 0 1 13.997 22h-3.995A3.005 3.005 0 0 1 7 18.988V5.012A3.01 3.01 0 0 1 10.002 2z"></path></svg></div></div><div class="switch-button-active-indicator" style="opacity: 1;"></div></button><button class="switch-button  icon-only"><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="M8.098 4A2.404 2.404 0 0 1 10.5 6.41v11.18A2.4 2.4 0 0 1 8.098 20H4.901A2.404 2.404 0 0 1 2.5 17.59V6.41A2.41 2.41 0 0 1 4.901 4zM19.098 4A2.404 2.404 0 0 1 21.5 6.41v11.18A2.4 2.4 0 0 1 19.098 20h-3.197a2.404 2.404 0 0 1-2.401-2.41V6.41A2.41 2.41 0 0 1 15.901 4z"></path></g></svg></div></div></button><button class="switch-button  icon-only" disabled=""><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="M5.548 6.5c1.083 0 1.952.879 1.952 1.958v9.084A1.95 1.95 0 0 1 5.548 19.5H2.951A1.953 1.953 0 0 1 1 17.542V8.458C1 7.379 1.875 6.5 2.951 6.5zM13.298 6.5c1.083 0 1.952.879 1.952 1.958v9.084a1.95 1.95 0 0 1-1.952 1.958h-2.597a1.953 1.953 0 0 1-1.951-1.958V8.458c0-1.079.875-1.958 1.951-1.958zM21.048 6.5C22.131 6.5 23 7.379 23 8.458v9.084a1.95 1.95 0 0 1-1.952 1.958h-2.597a1.953 1.953 0 0 1-1.951-1.958V8.458c0-1.079.875-1.958 1.951-1.958z"></path></g></svg></div></div></button></div></div><div class="zoom-tilt-controls"><div class="zoom-tilt-header"><div class="switch zoom-tilt-tabs "><button class="switch-button  label-only is-active"><p class="text-capitalize">Zoom</p><div class="switch-button-active-indicator" style="opacity: 1;"></div></button><button class="switch-button  label-only"><p class="text-capitalize">Tilt</p></button></div><div class="precision-hint "><span class="hint-text">Hold</span><span class="hint-key">⇧</span><span class="hint-text">for precision</span></div></div><div><div class="panel-control zoom-panel-control"><span class="label gray-text">Zoom</span><div class="controls"><div class="position-pad-safearea" style="width:208px"><div class="drag-pad-wrapper zoom-pad" style="padding:4px;width:208px;max-width:208px;height:156px;max-height:156px"><div class="pad-preview" style="pointer-events:none"><div class="layout-item" style="width:208px;height:156px"><div class="frame layout-frame" style="width:208px;height:156px"><div class="frame-content"><div style="position: relative; overflow: hidden; width: 208px; height: 156px; opacity: 1;"><!--$--><div style="width: 208px; height: 156px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0px; top: 0px;"><div style="position: absolute; width: 208px; height: 156px; display: flex; transform: scale(1); overflow: hidden; margin-left: 0px; margin-top: 0px;" class="__remotion-player"><div class="frame-background-display"><div class="frame-noise" style="background:url('/noise.svg');opacity:0;will-change:opacity mix-blend-mode"></div><div class="frame-background" style="background: linear-gradient(140deg, rgb(255, 100, 50) 12.8%, rgb(255, 0, 101) 43.52%, rgb(123, 46, 255) 84.34%); opacity: 1;"></div></div><div class="display-container-single"><div class="component" style="will-change: transform; position: absolute; inset: 0px; transform: translate(0%, 0%) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: center center; transition: transform 0.125s linear;"><div style="display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 100%;"><div style="display: flex; justify-content: center; align-items: center; position: relative; width: 75%; height: auto; aspect-ratio: 1.33333 / 1;"><div class="devices screenshot default" style="position: absolute; will-change: transform; width: 100%; height: auto; transform: perspective(150em) translate(0%, 0%) rotateX(0deg) rotateY(0deg) rotateZ(-8deg) scale(0.95); transition: transform 0.125s linear; transform-origin: center center;"><div class="item" style="aspect-ratio: 4 / 3;"><div class="item-container" style="border-radius: 3em; corner-shape: var(--corner-shape);"><div class="interface" style="border-radius: 3em; corner-shape: var(--corner-shape); width: 100%; height: 100%;"><div class="drop-wrapper" style="border-radius: 3em; corner-shape: var(--corner-shape); aspect-ratio: 4 / 3; overflow: hidden;"><div class="dropzone  bg-panel-dim" style="overflow: hidden;"><div class="file-drop" style="cursor: pointer;"></div><div class="empty-state start-state" style="opacity: 1;"><div class="icons"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12.97 11.16h3.88c.46 0 .83.37.83.83s-.38.83-.84.83h-3.89v3.88c0 .46-.38.83-.84.83-.47 0-.84-.38-.84-.84V12.8H7.38c-.47 0-.84-.38-.84-.84 0-.47.37-.84.83-.84h3.88V7.23a.83.83 0 1 1 1.66-.01v3.88ZM5.06 4.92c-3.91 3.9-3.91 10.23 0 14.14 3.9 3.9 10.23 3.9 14.14 0 3.9-3.91 3.9-10.24 0-14.15a10 10 0 0 0-14.15 0Z"></path></svg></div><div class="image-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.9 3C18.95 3 21 5.14 21 8.325v7.35C21 18.859 18.95 21 15.899 21h-7.8C5.049 21 3 18.859 3 15.675v-7.35C3 5.14 5.049 3 8.099 3zm.992 9.495c-.964-.602-1.709.243-1.91.513-.194.261-.36.549-.536.837-.429.711-.92 1.53-1.771 2.006-1.236.685-2.175.054-2.85-.405a5 5 0 0 0-.745-.44c-.604-.261-1.148.036-1.955 1.062-.424.536-.844 1.067-1.269 1.596-.255.317-.194.806.149 1.017.548.337 1.216.519 1.97.519h7.585c.428 0 .857-.059 1.266-.193a3.33 3.33 0 0 0 2.035-1.9c.322-.765.479-1.694.177-2.467-.1-.256-.25-.495-.461-.705-.553-.549-1.07-1.061-1.685-1.44M8.848 6.6a2.251 2.251 0 0 0 0 4.5c1.24 0 2.25-1.01 2.25-2.25 0-1.241-1.01-2.25-2.25-2.25"></path></svg></div><div class="video-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M4.599 18.5h8.628c1.616 0 2.6-.928 2.6-2.517V8.016c0-1.589-.891-2.516-2.497-2.516H4.599C3.077 5.5 2 6.427 2 8.016v7.967c0 1.589.983 2.517 2.599 2.517m12.429-4.137 2.962 2.557c.28.245.622.398.912.398.663 0 1.098-.479 1.098-1.152V7.833c0-.673-.435-1.152-1.098-1.152-.29 0-.632.153-.912.398l-2.962 2.557z"></path></svg></div></div><span class="title">Drop or Paste</span><span class="subtitle">Images &amp; Videos</span></div><input class="d-none" accept="image/png,image/jpeg,image/jpg,image/webp,image/avif,image/gif,image/apng,image/bmp,video/mov,video/quicktime,video/mp4,video/x-m4v,video/webm" type="file"></div></div></div><div class="shadow"><div class="shadow-layer" style="box-shadow: rgba(0, 0, 0, 0.4) 0em 0.55em 1.65em 0em, rgba(0, 0, 0, 0.4) 0em 1.65em 4.95em 0em; will-change: ;"></div></div></div></div></div></div></div></div></div></div></div><!--/$--></div></div></div></div></div><div class="drag-pad  " style="position:relative;width:200px;max-width:200px;height:148px;max-height:148px;box-sizing:border-box"><div class="drag-handle " style="transform:translateX(85.71428571428571px) translateY(63.42857142857143px);will-change:transform;width:28.571428571428573px;height:21.142857142857142px;cursor:grab;touch-action:none;display:grid;place-items:center" tabindex="0"><div class="viewfinder-div default-viewfinder " style="position:absolute;width:208px;height:156px;scale:1"></div></div><div class="axis-lock " style="left:0;top:0;transform:translateX(0px) translateY(0px);width:1.1px;height:1.1px"></div></div></div></div><form><span dir="ltr" data-orientation="horizontal" aria-disabled="false" class="slider-component undefined-disabled hide-rail" style="width:100%;--radix-slider-thumb-transform:translateX(-50%)"><span data-orientation="horizontal" class="SliderTrack track"><span data-orientation="horizontal" class="SliderRange rail" style="left:0%;right:92.3076923076923%"></span></span><span style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(7.69231% + 2.96154px);"><span role="slider" aria-label="Volume" aria-valuemin="75" aria-valuemax="400" aria-orientation="horizontal" data-orientation="horizontal" tabindex="0" class="SliderThumb thumb" style="" data-radix-collection-item="" aria-valuenow="100"></span><input value="100" style="display: none;"></span><div class="labels"><span id="zoom-slider-label">Zoom</span><span>100%</span></div></span></form></div></div></div></div></div></div></div>
+<div class="layouts-panel-controls-top minimized-backdrop" style="top: 0px; height: 146px;"><div class="transform-controls-wrapper"><div class="position-controls minimized-controls" style="transform: translateY(-82.4px) scale(0.4);"><div class="layout-filters"><div class="switch" style="flex:1"><button class="switch-button  icon-only is-active"><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M13.997 2A3.004 3.004 0 0 1 17 5.012v13.976A3 3 0 0 1 13.997 22h-3.995A3.005 3.005 0 0 1 7 18.988V5.012A3.01 3.01 0 0 1 10.002 2z"></path></svg></div></div><div class="switch-button-active-indicator" style="opacity: 1;"></div></button><button class="switch-button  icon-only"><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="M8.098 4A2.404 2.404 0 0 1 10.5 6.41v11.18A2.4 2.4 0 0 1 8.098 20H4.901A2.404 2.404 0 0 1 2.5 17.59V6.41A2.41 2.41 0 0 1 4.901 4zM19.098 4A2.404 2.404 0 0 1 21.5 6.41v11.18A2.4 2.4 0 0 1 19.098 20h-3.197a2.404 2.404 0 0 1-2.401-2.41V6.41A2.41 2.41 0 0 1 15.901 4z"></path></g></svg></div></div></button><button class="switch-button  icon-only" disabled=""><div class="visual"><div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor"><path d="M5.548 6.5c1.083 0 1.952.879 1.952 1.958v9.084A1.95 1.95 0 0 1 5.548 19.5H2.951A1.953 1.953 0 0 1 1 17.542V8.458C1 7.379 1.875 6.5 2.951 6.5zM13.298 6.5c1.083 0 1.952.879 1.952 1.958v9.084a1.95 1.95 0 0 1-1.952 1.958h-2.597a1.953 1.953 0 0 1-1.951-1.958V8.458c0-1.079.875-1.958 1.951-1.958zM21.048 6.5C22.131 6.5 23 7.379 23 8.458v9.084a1.95 1.95 0 0 1-1.952 1.958h-2.597a1.953 1.953 0 0 1-1.951-1.958V8.458c0-1.079.875-1.958 1.951-1.958z"></path></g></svg></div></div></button></div></div><div class="zoom-tilt-controls"><div class="zoom-tilt-header"><div class="switch zoom-tilt-tabs "><button class="switch-button  label-only is-active"><p class="text-capitalize">Zoom</p><div class="switch-button-active-indicator" style="opacity: 1;"></div></button><button class="switch-button  label-only"><p class="text-capitalize">Tilt</p></button></div><div class="precision-hint "><span class="hint-text">Hold</span><span class="hint-key">⇧</span><span class="hint-text">for precision</span></div></div><div><div class="panel-control zoom-panel-control"><span class="label gray-text">Zoom</span><div class="controls"><div class="position-pad-safearea" style="width:208px"><div class="drag-pad-wrapper zoom-pad" style="padding:4px;width:208px;max-width:208px;height:156px;max-height:156px"><div class="pad-preview" style="pointer-events:none"><div class="layout-item" style="width:208px;height:156px"><div class="frame layout-frame" style="width:208px;height:156px"><div class="frame-content"><div style="position: relative; overflow: hidden; width: 208px; height: 156px; opacity: 1;"><!--$--><div style="width: 208px; height: 156px; display: flex; flex-direction: column; position: absolute; overflow: hidden; left: 0px; top: 0px;"><div style="position: absolute; width: 208px; height: 156px; display: flex; transform: scale(1); overflow: hidden; margin-left: 0px; margin-top: 0px;" class="__remotion-player"><div class="frame-background-display"><div class="frame-noise" style="background:url('/noise.svg');opacity:0;will-change:opacity mix-blend-mode"></div><div class="frame-background" style="background: linear-gradient(140deg, rgb(255, 100, 50) 12.8%, rgb(255, 0, 101) 43.52%, rgb(123, 46, 255) 84.34%); opacity: 1;"></div></div><div class="display-container-single"><div class="component" style="will-change: transform; position: absolute; inset: 0px; transform: translate(0%, 0%) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: center center; transition: transform 0.125s linear;"><div style="display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 100%;"><div style="display: flex; justify-content: center; align-items: center; position: relative; width: 75%; height: auto; aspect-ratio: 1.33333 / 1;"><div class="devices screenshot default" style="position: absolute; will-change: transform; width: 100%; height: auto; transform: perspective(150em) translate(0%, 0%) rotateX(0deg) rotateY(0deg) rotateZ(-8deg) scale(0.95); transition: transform 0.125s linear; transform-origin: center center;"><div class="item" style="aspect-ratio: 4 / 3;"><div class="item-container" style="border-radius: 3em; corner-shape: var(--corner-shape);"><div class="interface" style="border-radius: 3em; corner-shape: var(--corner-shape); width: 100%; height: 100%;"><div class="drop-wrapper" style="border-radius: 3em; corner-shape: var(--corner-shape); aspect-ratio: 4 / 3; overflow: hidden;"><div class="dropzone  bg-panel-dim" style="overflow: hidden;"><div class="file-drop" style="cursor: pointer;"></div><div class="empty-state start-state" style="opacity: 1;"><div class="icons"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12.97 11.16h3.88c.46 0 .83.37.83.83s-.38.83-.84.83h-3.89v3.88c0 .46-.38.83-.84.83-.47 0-.84-.38-.84-.84V12.8H7.38c-.47 0-.84-.38-.84-.84 0-.47.37-.84.83-.84h3.88V7.23a.83.83 0 1 1 1.66-.01v3.88ZM5.06 4.92c-3.91 3.9-3.91 10.23 0 14.14 3.9 3.9 10.23 3.9 14.14 0 3.9-3.91 3.9-10.24 0-14.15a10 10 0 0 0-14.15 0Z"></path></svg></div><div class="image-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.9 3C18.95 3 21 5.14 21 8.325v7.35C21 18.859 18.95 21 15.899 21h-7.8C5.049 21 3 18.859 3 15.675v-7.35C3 5.14 5.049 3 8.099 3zm.992 9.495c-.964-.602-1.709.243-1.91.513-.194.261-.36.549-.536.837-.429.711-.92 1.53-1.771 2.006-1.236.685-2.175.054-2.85-.405a5 5 0 0 0-.745-.44c-.604-.261-1.148.036-1.955 1.062-.424.536-.844 1.067-1.269 1.596-.255.317-.194.806.149 1.017.548.337 1.216.519 1.97.519h7.585c.428 0 .857-.059 1.266-.193a3.33 3.33 0 0 0 2.035-1.9c.322-.765.479-1.694.177-2.467-.1-.256-.25-.495-.461-.705-.553-.549-1.07-1.061-1.685-1.44M8.848 6.6a2.251 2.251 0 0 0 0 4.5c1.24 0 2.25-1.01 2.25-2.25 0-1.241-1.01-2.25-2.25-2.25"></path></svg></div><div class="video-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M4.599 18.5h8.628c1.616 0 2.6-.928 2.6-2.517V8.016c0-1.589-.891-2.516-2.497-2.516H4.599C3.077 5.5 2 6.427 2 8.016v7.967c0 1.589.983 2.517 2.599 2.517m12.429-4.137 2.962 2.557c.28.245.622.398.912.398.663 0 1.098-.479 1.098-1.152V7.833c0-.673-.435-1.152-1.098-1.152-.29 0-.632.153-.912.398l-2.962 2.557z"></path></svg></div></div><span class="title">Drop or Paste</span><span class="subtitle">Images &amp; Videos</span></div><input class="d-none" accept="image/png,image/jpeg,image/jpg,image/webp,image/avif,image/gif,image/apng,image/bmp,video/mov,video/quicktime,video/mp4,video/x-m4v,video/webm" type="file"></div></div></div><div class="shadow"><div class="shadow-layer" style="box-shadow: rgba(0, 0, 0, 0.4) 0em 0.55em 1.65em 0em, rgba(0, 0, 0, 0.4) 0em 1.65em 4.95em 0em; will-change: ;"></div></div></div></div></div></div></div></div></div></div></div><!--/$--></div></div></div></div></div><div class="drag-pad  " style="position:relative;width:200px;max-width:200px;height:148px;max-height:148px;box-sizing:border-box"><div class="drag-handle " style="transform:translateX(85.71428571428571px) translateY(63.42857142857143px);will-change:transform;width:28.571428571428573px;height:21.142857142857142px;cursor:grab;touch-action:none;display:grid;place-items:center" tabindex="0"><div class="viewfinder-div default-viewfinder " style="position:absolute;width:208px;height:156px;scale:1"></div></div><div class="axis-lock " style="left:0;top:0;transform:translateX(0px) translateY(0px);width:1.1px;height:1.1px"></div></div></div></div><form><span dir="ltr" data-orientation="horizontal" aria-disabled="false" class="slider-component undefined-disabled hide-rail" style="width:100%;--radix-slider-thumb-transform:translateX(-50%)"><span data-orientation="horizontal" class="SliderTrack track"><span data-orientation="horizontal" class="SliderRange rail" style="left:0%;right:92.3076923076923%"></span></span><span style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(7.69231% + 2.96154px);"><span role="slider" aria-label="Volume" aria-valuemin="75" aria-valuemax="400" aria-orientation="horizontal" data-orientation="horizontal" tabindex="0" class="SliderThumb thumb" style="" data-radix-collection-item="" aria-valuenow="100"></span><input value="100" style="display: none;"></span><div class="labels"><span id="zoom-slider-label">Zoom</span><span>100%</span></div></span></form></div></div></div></div></div></div></div>
 </body>
 </html>
